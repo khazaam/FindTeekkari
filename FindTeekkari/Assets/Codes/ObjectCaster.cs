@@ -26,11 +26,21 @@ public class ObjectCaster : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out theThing))
         {
-            //Names of objects
-            selectedThing = theThing.transform.gameObject.name;
-            internalThing = theThing.transform.gameObject.name;
-            //Name shown on the screen when hit by collider
-            TextFromObjects.text = (theThing.collider.name);
+            if (theThing.collider.CompareTag("Interactable"))
+            {
+                //Names of objects
+                selectedThing = theThing.transform.gameObject.name;
+                internalThing = theThing.transform.gameObject.name;
+                //Name shown on the screen when hit by collider
+                TextFromObjects.text = (theThing.collider.name);
+
+                Debug.Log("Hit the right spot!");
+            }
+            else
+            {
+                Debug.Log("Did not hit the right spot");
+            }
+
 
 
         }
