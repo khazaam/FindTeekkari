@@ -9,7 +9,7 @@ public class ObjectCaster : MonoBehaviour
     public string internalThing;
 
     public string OtherThingForTextUI;
-    //For some reason, only boxcollider works with this.
+    //For some reason, only boxcollider works with this, it actually works now with all
 
     Text TextFromObjects;
     public RaycastHit theThing;
